@@ -1,6 +1,6 @@
-package com.ics.network.networkclientservice;
+package com.ics.network.client.app;
 
-import com.ics.network.networkclientservice.controller.MultiplicationController;
+import com.ics.network.client.app.controller.CalculationController;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,11 +14,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class NetworkClientServiceApplicationTests {
     @Autowired
-    private MultiplicationController multiplicationController;
+    private CalculationController calculationController;
 
     @Test
     public void contextLoads() {
-        assertThat(this.multiplicationController).isNotNull();
+        assertThat(this.calculationController).isNotNull();
     }
 
 }
