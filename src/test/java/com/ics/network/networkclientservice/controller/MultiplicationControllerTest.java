@@ -21,7 +21,7 @@ public class MultiplicationControllerTest {
 
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/v1/multiply?a=1&b=3")).andDo(print()).andExpect(status().isOk())
+        this.mockMvc.perform(get("/v1/calc/multiply?a=1&b=3")).andDo(print()).andExpect(status().isOk())
                     .andExpect(content().string(containsString("{\"a\":1,\"b\":3,\"result\":3}")));
     }
 }

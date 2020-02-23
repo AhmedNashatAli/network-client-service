@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  nginx_server:
+    image: custom-nginx
+    ports:
+      - '80:80'
+    networks:
+      - calc-network
+    depends_on:
+      - "calc-service"
+  calc-service:
+    image: v1/calc
+    networks:
+      - calc-network
+networks:
+  calc-network:
+    name: calc-network
