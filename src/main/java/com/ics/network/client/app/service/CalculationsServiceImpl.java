@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculationsServiceImpl implements CalculationsService {
+    /**
+     *
+     * @param input
+     * @return
+     */
     @Override
     @Async("asyncExecutor")
     public Result multiply(final Input input) {
@@ -16,6 +21,11 @@ public class CalculationsServiceImpl implements CalculationsService {
         return new Result(input, res);
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     @Override
     @Async("asyncExecutor")
     public Result add(final Input input) {
@@ -23,6 +33,11 @@ public class CalculationsServiceImpl implements CalculationsService {
         return new Result(input, res);
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     @Override
     @Async("asyncExecutor")
     public Result divide(final Input input) {

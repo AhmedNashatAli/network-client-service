@@ -7,6 +7,11 @@ public class Input {
     public Input() {
     }
 
+    public Input(final int firstNumber, final int secondNumber) {
+        this.firstNumber = firstNumber;
+        this.secondNumber = secondNumber;
+    }
+
     public void setFirstNumber(final int firstNumber) {
         this.firstNumber = firstNumber;
     }
