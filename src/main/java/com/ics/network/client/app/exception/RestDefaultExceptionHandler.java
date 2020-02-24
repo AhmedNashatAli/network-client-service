@@ -20,6 +20,13 @@ public class RestDefaultExceptionHandler {
         return errors;
     }
 
+    @ExceptionHandler(DivisionByZeroException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public CustomErrorResponse handleDivisionByZeroException(final DivisionByZeroException e,
+                                                             final WebRequest request) {
+        final CustomErrorResponse errors = new CustomErrorResponse(HttpStatus.BAD_REQUEST, e.getLocalizedMessage());
+        return errors;
+    }
 
     @ExceptionHandler(Throwable.class)
     public CustomErrorResponse handleDefaultException(final Throwable ex) {

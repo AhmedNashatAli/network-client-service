@@ -1,5 +1,6 @@
 package com.ics.network.client.app.service;
 
+import com.ics.network.client.app.exception.DivisionByZeroException;
 import com.ics.network.client.app.model.Input;
 import com.ics.network.client.app.model.Result;
 
@@ -25,7 +26,8 @@ public class CalculationsServiceImpl implements CalculationsService {
     @Override
     @Async("asyncExecutor")
     public Result divide(final Input input) {
-        final double res = input.getFirstNumber() / input.getSecondNumber();
+        if (input.getSecondNumber() == 0) { throw new DivisionByZeroException("SecondNumber must not be zero"); }
+        final double res = input.getFirstNumber() / (double) input.getSecondNumber();
         return new Result(input, res);
     }
 }
