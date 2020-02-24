@@ -21,7 +21,7 @@ public class Result {
         return this.result;
     }
 
-    public void setResult(final long result) {
+    public void setResult(final double result) {
         this.result = result;
     }
 }

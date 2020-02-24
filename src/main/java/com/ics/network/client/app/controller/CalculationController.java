@@ -47,7 +47,7 @@ public class CalculationController {
         return this.calculationsService.add(input);
     }
 
-    @ApiOperation(value = "dDivide 2 numbers",
+    @ApiOperation(value = "Divide 2 numbers",
                   response = Result.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200,
