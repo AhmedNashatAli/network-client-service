@@ -1,10 +1,10 @@
 package com.ics.network.client.app.model;
 
 public class Result {
-    Input input;
-    long  result;
+    Input  input;
+    double result;
 
-    public Result(final Input input, final long result) {
+    public Result(final Input input, final double result) {
         this.input = input;
         this.result = result;
     }
@@ -17,7 +17,7 @@ public class Result {
         this.input = input;
     }
 
-    public long getResult() {
+    public double getResult() {
         return this.result;
     }
 

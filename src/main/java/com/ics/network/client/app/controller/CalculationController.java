@@ -46,4 +46,17 @@ public class CalculationController {
     public Result add(@RequestBody final Input input) {
         return this.calculationsService.add(input);
     }
+
+    @ApiOperation(value = "dDivide 2 numbers",
+                  response = Result.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200,
+                         message = "Successfully retrieved the result of division of the 2 numbers"),
+            @ApiResponse(code = 400,
+                         message = "The input are not right")
+    })
+    @PostMapping("/divide")
+    public Result divide(@RequestBody final Input input) {
+        return this.calculationsService.divide(input);
+    }
 }

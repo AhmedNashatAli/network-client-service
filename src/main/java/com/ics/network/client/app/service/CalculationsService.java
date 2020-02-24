@@ -8,4 +8,6 @@ public interface CalculationsService {
 
     Result add(Input input);
 
+    Result divide(Input input);
+
 }
