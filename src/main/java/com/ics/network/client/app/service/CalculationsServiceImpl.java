@@ -6,7 +6,6 @@ import com.ics.network.client.app.model.Result;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,7 +18,6 @@ public class CalculationsServiceImpl implements CalculationsService {
      * @return
      */
     @Override
-    @Async("asyncExecutor")
     public Result multiply(final Input input) {
         final double res = input.getFirstNumber() * input.getSecondNumber();
         return new Result(input, res);
@@ -31,7 +29,6 @@ public class CalculationsServiceImpl implements CalculationsService {
      * @return
      */
     @Override
-    @Async("asyncExecutor")
     public Result add(final Input input) {
         final double res = input.getFirstNumber() + input.getSecondNumber();
         return new Result(input, res);
@@ -43,7 +40,6 @@ public class CalculationsServiceImpl implements CalculationsService {
      * @return
      */
     @Override
-    @Async("asyncExecutor")
     public Result divide(final Input input) {
         if (input.getSecondNumber() == 0) {
             LOGGER.error("Error in division function with inputs firstNumber is {} and secondNumber is {} ",
